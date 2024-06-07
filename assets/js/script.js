@@ -1,5 +1,9 @@
-import { obtenerPersonas, registrarPersona, actualizarPersona, eliminarPersona } from "./promesas.js";
+import {  registrarPersona } from "./promesas.js";
 
+window.addEventListener("load", () => {
+    document.getElementById("btnregistrar").addEventListener("click", registrar);
+
+});
 //funcion para validar campos que usen radio de cualqueir formualario 
 //en est caso usada para el sexo
 //recorre con un for una lista creada con el valor del radio
@@ -54,5 +58,11 @@ const registrar = () => {
         opinion: vOpinion,
     };
     console.log(objeto);
+
+    registrarPersona(objeto).then(()=>{
+        alert("Registro Completado");
+    }).catch((r)=>{
+        alert("Hubo un error:"+ r );
+    });
 
 };
