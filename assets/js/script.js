@@ -1,4 +1,4 @@
-import {  registrarPersona } from "./promesas.js";
+import {  registrarPersona , obtenerDatos } from "./promesas.js";
 
 window.addEventListener("load", () => {
     document.getElementById("btnregistrar").addEventListener("click", registrar);
@@ -66,3 +66,23 @@ const registrar = () => {
     });
 
 };
+
+const cargarEstructura = () =>{
+    obtenerDatos().then((personas) =>{
+        let estructura = "";
+        personas.forEach((persona) =>{
+            estructura += "<tr>";
+            estructura += "<td>" + persona.nombre + "</td>";
+            estructura += "<td>" + persona.apellido + "</td>";
+            estructura += "<td>" + persona.contraseña + "</td>";
+            estructura += "<td>" + persona.fecha + "</td>";
+            estructura += "<td>" + persona.sexo + "</td>";
+            estructura += "<td>" + persona.categoria + "</td>";
+            estructura += "<td>" + persona.bici + "</td>";
+            estructura += "<td>" + persona.opinion + "</td>";
+            estructura += "<td> <button id='UPD" + persona.id + "'>Actualizar</button></td>";
+            estructura += "<td> <button id='DEL" + persona.id + "'>Eliminar</button></td>";
+            estructura += "</tr>";
+            
+    });
+}
