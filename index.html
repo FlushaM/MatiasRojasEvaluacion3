@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Registro</title>
+
+    <script type="module" src="assets/js/firebase.js"></script>
+    <script type="module" src="assets/js/script.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="formregister"></div>
+        <h1>Registro De Ciclistas</h1>
+        <form id="registerForm">
+            <input type="text" id="nombre" name="nombre" placeholder="Ingrese Nombre" required>
+            <input type="text" name="apellido" id="apellido" name="apellido" placeholder="Ingrese Apellido" required>
+            <input type="date" id="fecha" name="edad" placeholder="Ingrese fecha de nacimiento" required>
+            <div>
+                <label>Sexo:</label>
+                <input type="radio" class="sexo" name="sexo"
+                value="masculino" required>
+                <label for="masculino">masculino</label>
+                <input type="radio" class="sexo" name="sexo"
+                value="femenino" required>
+                <label for="femenino">femenino</label>
+            </div>
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria" required>
+                <option value="novicia">Novicia</option>
+                <option value="amateur">Amateur</option>
+                <option value="pro">Pro</option>
+            </select>
+            <input type="text" id="bici" name="bici" placeholder="Ingrese su bicicleta" required>
+            <label for="opinion">Opinion:</label>
+            <textarea name="opinion" id="opinion" placeholder="Deje su opinion aqui" cols="30" rows="10"></textarea>
+            <button type="button" id="btnregistrar">Registrar</button>
+        </form>
+</body>
+</html>
