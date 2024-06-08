@@ -16,7 +16,7 @@
         <button id="btnFuente">Cambiar Fuente</button>
     </div>
 
-    <div class="formregister"></div>
+    <div class="card">
         <h1>Registro De Ciclistas</h1>
         <form id="registerForm">
             <input type="text" id="UPDnombre" placeholder="Ingresa tu nombre" name="nombre">
@@ -42,23 +42,35 @@
             <button type="button" id="btnregistrar">Registrar</button>
             <button type="button" id="btnActualizar">Actualizar</button>
         </form>
+    </div>
+
+    <div class="content">
+        <div class="aside left">
+            <img src="assets/images/left-photo.jpg" alt="Foto Izquierda">
+        </div>
         <div class="crud">
             <h2>Lista de Ciclistas</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Nombre:</th>
-                        <th>Apellido:</th>
-                        <th>Contrañesa:</th>
-                        <th>Fecha de Nacimiento:</th>
-                        <th>Sexo:</th>
-                        <th>Categoria:</th>
-                        <th>Bicicleta:</th>
-                        <th>Opinion:</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Contraseña</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Sexo</th>
+                        <th>Categoría</th>
+                        <th>Bicicleta</th>
+                        <th>Opinión</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody id="tdDatos"></tbody>
             </table>
         </div>
+        <div class="aside right">
+            <img src="assets/images/right-photo.jpg" alt="Foto Derecha">
+        </div>
+    </div>
+
 </body>
 </html>

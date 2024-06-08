@@ -1,73 +1,170 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f5f5f5;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.controls {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-body.contraste {
-    background-color: black;
+.controls button {
+    background-color: #555;
     color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-body.fuente-alternativa {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+.controls button:hover {
+    background-color: #444;
 }
 
-.formregister {
-    background-color: #00ced1;
-    color: white;
+.card {
+    background-color: #fff;
+    color: #333;
     border-radius: 10px;
     padding: 20px;
-    margin: 20px;
+    margin: 20px auto;
     width: 80%;
-    max-width: 500px;
+    max-width: 400px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+}
+
+.card h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
-.crud{
-    background-color: #00ced1;
-    width: 80%;
+form input, form select, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-input[type="radio"] {
+form input[type="radio"] {
     width: auto;
     margin: 0 5px 0 0;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+form label {
+    margin: 5px 0;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     margin-top: 20px;
-    background-color: white;
-    color: black;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+.aside {
+    width: 20%;
+    padding: 20px;
 }
 
-th, td {
-    padding: 12px;
+.aside img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.crud {
+    width: 60%;
+}
+
+.crud h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.crud table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.crud th, .crud td {
+    padding: 10px;
     text-align: left;
+    border-right: 1px solid #ccc;
 }
 
-th {
-    background-color: #005f5f;
+.crud th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+}
+
+.crud th:last-child, .crud td:last-child {
+    border-right: none;
+}
+
+.crud tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.crud tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+body.contraste {
+    background-color: #333;
     color: white;
 }
 
-td {
-    background-color: #e0f7fa;
+body.contraste .card, body.contraste .crud th, body.contraste .crud td {
+    background-color: #444;
+    color: white;
 }
 
+body.contraste form input, body.contraste form select, body.contraste form textarea, body.contraste form button {
+    background-color: #555;
+    color: white;
+    border: 1px solid #666;
+}
+
+body.contraste form button {
+    background-color: #666;
+}
+
+body.contraste form button:hover {
+    background-color: #777;
+}
+
+body.fuente-alternativa {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
