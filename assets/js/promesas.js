@@ -1,4 +1,4 @@
-import {addDoc,collection,doc,updateDoc,getDocs} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import {addDoc,collection,doc,updateDoc,getDocs,deleteDoc} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 import {db} from "./firebase.js"
 
@@ -20,4 +20,9 @@ export const obtenerPersonas = async()=>{
 export const actualizarPersona = async(objeto,id)=>{
     const ref = doc (db,"persona",id);
     await updateDoc(ref,objeto);
+}
+
+export const eliminarPersona = async(id)=>{
+    const ref = doc (db,"persona",id);
+    await deleteDoc(ref);
 }

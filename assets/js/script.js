@@ -1,5 +1,7 @@
-import {  registrarPersona , obtenerPersonas , actualizarPersona } from "./promesas.js";
+import {  registrarPersona , obtenerPersonas , actualizarPersona, eliminarPersona } from "./promesas.js";
 
+
+//agregamos eventos a los botones al cargar la pagina
 window.addEventListener("load", () => {
     document.getElementById("btnregistrar").addEventListener("click", registrar);
     document.getElementById("btnActualizar").addEventListener("click",actualizar);
@@ -21,16 +23,39 @@ const obtenerValorRadio = (valores) => {
     return null; // si no seleeciono ningun radio es nulo
   };
 
+//cambiamos el contraste usando cambio de clases
 const cambiarContraste = () => {
     document.body.classList.toggle("contraste");
 }
-
+//lo mismo para la fuente , cambiamos las clases
 const cambiarFuente = () => {
     document.body.classList.toggle("fuente-alternativa");
 }
+//funcion general para validar los datos ingresados en el formulario , tomando los valores y haciendo validaciones
+const validarFormulario = () =>{
+    
+    let eNombre = document.getElementById("UPDnombre").value;
+    let eApellido = document.getElementById("UPDapellido").value;
+    let eContraseña = document.getElementById("UPDcontraseña").value;
+    let eDate = document.getElementById("UPDfecha");
+    let eSexo = obtenerValorRadio(document.getElementsByName("UPDsexo"));
+    let eCategoria = document.getElementById("UPDcategoria").value;
+    let eBici = document.getElementById("UPDbicicleta").value;
+    let eOpinion = document.getElementById("UPDopinion");
+
+    if (eNombre === "" || eApellido === "" || eContraseña === "" || eDate === "" || eSexo === null || eCategoria === "" || eBici === "" || eOpinion === ""){
+        alert("Debe llenar todos los campos");
+        return false;
+    }
+    return true;
+
+};
 
 //funcion para registrar personas se recuperan elementos se agrega valor y se crea el objeto
 const registrar = () => {
+    //llamamos la funcion de validacion<
+    if (!validarFormulario()) return;
+
     // recuperar el elemento
     let eNombre = document.getElementById("UPDnombre");
     let eApellido = document.getElementById("UPDapellido");
@@ -40,6 +65,7 @@ const registrar = () => {
     let eCategoria = document.getElementById("UPDcategoria");
     let eBici = document.getElementById("UPDbicicleta");
     let eOpinion = document.getElementById("UPDopinion");
+
     // recuperamos valor
     let vNombre = eNombre.value;
     let vApellido = eApellido.value;
@@ -49,36 +75,34 @@ const registrar = () => {
     let vCategoria = eCategoria.value;
     let vBici = eBici.value;
     let vOpinion = eOpinion.value;
+
     // creamos objeto
-
-
-    
-
     let objeto = {nombre: vNombre, apellido: vApellido, eContraseña:vContraseña, fecha: vDate, sexo: vSexo, categoria: vCategoria, bici: vBici, opinion: vOpinion};
-    console.log(objeto);
     registrarPersona(objeto).then(() => {
         alert("Registro exitoso");
-        cargarDatos(); // Esto asegurará que los datos se recarguen después de un registro exitoso.
+        cargarDatos();
+        registerForm.reset(); //con esta funcion limpiamos el formulario
+         
     }).catch((r) => {
         alert("algo ocurrio");
         alert(r);
     });
-    // llamar a la función
+
     let id = document.getElementById("btnActualizar").value;
-    console.log(objeto);
     actualizarPersona(objeto, id).then(() => {
         alert("actualizado con exito");
         cargarDatos();
+        registerForm.reset(); //con esta funcion limpiamos el formulario
     });
 };
 
 
-
+//funcion que carga los datos de los ciclistas en la tabla utilizando su id #tdDatos
 const cargarDatos = () => {
     obtenerPersonas().then((personas) => {
-        console.log("recupere");
-        console.log(personas);
+        //alamcenamos cicclistas
         let estructura = "";
+        //iteramos en la lista para construir la tabla
         personas.forEach((persona) => {
             estructura += "<tr>";
             estructura += "<td>" + persona.nombre + "</td>";
@@ -125,6 +149,7 @@ const cargarDatos = () => {
                     eliminarPersona(persona.id).then(() => {
                         alert("eliminado con exito");
                         cargarDatos();
+                        registerForm.reset(); //con esta funcion limpiamos el formulario
                     });
                 }
             });
@@ -132,7 +157,10 @@ const cargarDatos = () => {
     });
 };
 
+
+//en esta funcion reutilizamos la estructura del registro , y tambien el mismo form usando las mismas id o class en caso del sexo
 const actualizar = () => {
+    if (!validarFormulario()) return;
     // recupere elemento
     let eNombre = document.getElementById("UPDnombre");
     let eApellido = document.getElementById("UPDapellido");
@@ -158,6 +186,7 @@ const actualizar = () => {
     actualizarPersona(objeto, id).then(() => {
         alert("actualizado con exito");
         cargarDatos();
+        registerForm.reset(); //con esta funcion limpiamos el formulario
     });
 };
 
