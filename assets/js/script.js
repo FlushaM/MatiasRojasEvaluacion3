@@ -3,6 +3,8 @@ import {  registrarPersona , obtenerPersonas , actualizarPersona } from "./prome
 window.addEventListener("load", () => {
     document.getElementById("btnregistrar").addEventListener("click", registrar);
     document.getElementById("btnActualizar").addEventListener("click",actualizar);
+    document.getElementById("btnContraste").addEventListener("click", cambiarContraste);
+    document.getElementById("btnFuente").addEventListener("click", cambiarFuente);
     cargarDatos(); 
 
 });
@@ -18,6 +20,14 @@ const obtenerValorRadio = (valores) => {
     }
     return null; // si no seleeciono ningun radio es nulo
   };
+
+const cambiarContraste = () => {
+    document.body.classList.toggle("contraste");
+}
+
+const cambiarFuente = () => {
+    document.body.classList.toggle("fuente-alternativa");
+}
 
 //funcion para registrar personas se recuperan elementos se agrega valor y se crea el objeto
 const registrar = () => {

@@ -8,6 +8,15 @@ body {
     align-items: center;
 }
 
+body.contraste {
+    background-color: black;
+    color: white;
+}
+
+body.fuente-alternativa {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
 .formregister {
     background-color: #00ced1;
     color: white;
