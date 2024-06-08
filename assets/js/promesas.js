@@ -1,4 +1,4 @@
-import {addDoc,collection} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import {addDoc,collection,doc,updateDoc,getDocs} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 import {db} from "./firebase.js"
 
@@ -7,12 +7,17 @@ export const registrarPersona = async (persona) => {
 }
 
 
-export const obtenerDatos = async()=>{
-    const ref = collection(db,"persona");
-    const querySnapshot = await getDocs(ref);
+export const obtenerPersonas = async()=>{
+    const ref = collection(db, "persona");
+    const querySnap = await getDocs(ref);
     let listado = []
-    querySnapshot.forEach(doc => {
-        listado.push({...doc.data(),id: doc.id});
+    querySnap.forEach(doc => {
+        listado.push({...doc.data(),id: doc.id})
     });
     return listado;
+}
+
+export const actualizarPersona = async(objeto,id)=>{
+    const ref = doc (db,"persona",id);
+    await updateDoc(ref,objeto);
 }

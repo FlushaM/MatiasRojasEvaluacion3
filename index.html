@@ -13,29 +13,28 @@
     <div class="formregister"></div>
         <h1>Registro De Ciclistas</h1>
         <form id="registerForm">
-            <input type="text" id="nombre" name="nombre" placeholder="Ingrese Nombre" required>
-            <input type="text" name="apellido" id="apellido" name="apellido" placeholder="Ingrese Apellido" required>
-            <input type="password" name="contraseña" id="contraseña" placeholder="Ingrese una contraseña" required>
-            <input type="date" id="fecha" name="fecha" placeholder="Ingrese fecha de nacimiento" required>
+            <input type="text" id="UPDnombre" placeholder="Ingresa tu nombre" name="nombre">
+            <input type="text" id="UPDapellido" placeholder="Ingresa tu apellido" name="apellido">
+            <input type="password" id="UPDcontraseña" placeholder="Ingresa tu contraseña" name="contraseña">
+            <input type="date" id="UPDfecha" placeholder="Ingresa tu fecha de nacimiento" name="fecha">
             <div>
                 <label>Sexo:</label>
-                <input type="radio" class="sexo" name="sexo"
-                value="masculino" required>
-                <label for="masculino">masculino</label>
-                <input type="radio" class="sexo" name="sexo"
-                value="femenino" required>
-                <label for="femenino">femenino</label>
+                <input type="radio" class="UPDsexo" name="UPDsexo" value="masculino">
+                <label for="UPDsexo">Masculino</label>
+                <input type="radio" class="UPDsexo" name="UPDsexo" value="femenino">
+                <label for="UPDsexo">Femenino</label>
             </div>
-            <label for="categoria">Categoria:</label>
-            <select name="categoria" id="categoria" required>
+            <label for="UPDcategoria">Categoría:</label>
+            <select id="UPDcategoria" name="categoria">
                 <option value="novicia">Novicia</option>
                 <option value="amateur">Amateur</option>
                 <option value="pro">Pro</option>
             </select>
-            <input type="text" id="bici" name="bici" placeholder="Ingrese su bicicleta" required>
-            <label for="opinion">Opinion:</label>
-            <textarea name="opinion" id="opinion" placeholder="Deje su opinion aqui" cols="30" rows="10"></textarea>
+            <input type="text" id="UPDbicicleta" placeholder="Ingresa tu bicicleta" name="bicicleta">
+            <label for="UPDopinion">Opinión:</label>
+            <textarea id="UPDopinion" name="opinion" placeholder="Deje su opinión aquí"></textarea>
             <button type="button" id="btnregistrar">Registrar</button>
+            <button type="button" id="btnActualizar">Actualizar</button>
         </form>
         <div class="crud">
             <h2>Lista de Ciclistas</h2>
