@@ -77,7 +77,7 @@ const registrar = () => {
     let vOpinion = eOpinion.value;
 
     // creamos objeto
-    let objeto = {nombre: vNombre, apellido: vApellido, eContraseña:vContraseña, fecha: vDate, sexo: vSexo, categoria: vCategoria, bici: vBici, opinion: vOpinion};
+    let objeto = {nombre: vNombre, apellido: vApellido, contraseña:vContraseña, fecha: vDate, sexo: vSexo, categoria: vCategoria, bici: vBici, opinion: vOpinion};
     registrarPersona(objeto).then(() => {
         alert("Registro exitoso");
         cargarDatos();
