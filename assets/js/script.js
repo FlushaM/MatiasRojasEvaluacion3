@@ -133,6 +133,7 @@ const cargarDatos = () => {
                 eApellido.value = persona.apellido;
                 eContraseña.value = persona.contraseña;
                 eDate.value = persona.fecha;
+                //NECESITO USAR LA FUNCION COMPELTA PARA PODER OBTENER EL VALOR DEL RADIO
                 for (let i = 0; i < eSexo.length; i++) {
                     if (eSexo[i].value === persona.sexo) {
                         eSexo[i].checked = true;
