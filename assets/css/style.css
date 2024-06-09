@@ -6,13 +6,13 @@ body {
     color: #333;
 }
 
-.controls {
+.botonesAcciones {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-.controls button {
+.botonesAcciones button {
     background-color: #555;
     color: white;
     border: none;
@@ -22,7 +22,7 @@ body {
     border-radius: 5px;
 }
 
-.controls button:hover {
+.botonesAcciones button:hover {
     background-color: #444;
 }
 
@@ -87,12 +87,12 @@ form button:hover {
     margin-top: 20px;
 }
 
-.aside {
+.borde {
     width: 20%;
     padding: 20px;
 }
 
-.aside img {
+.borde img {
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -129,17 +129,10 @@ form button:hover {
     color: #333;
 }
 
-.crud th:last-child, .crud td:last-child {
-    border-right: none;
-}
-
-.crud tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
 .crud tbody tr:hover {
     background-color: #f1f1f1;
 }
+
 
 body.contraste {
     background-color: #333;
@@ -167,4 +160,5 @@ body.contraste form button:hover {
 
 body.fuente-alternativa {
     font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 20px;
 }
