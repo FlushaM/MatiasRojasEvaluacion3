@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
 
 });
 //funcion para validar campos que usen radio de cualqueir formualario 
-//en est caso usada para el sexo
+//en estE caso usada para el sexo
 //recorre con un for una lista creada con el valor del radio
 //luego usamos if si si el radio esta clickeado con .checked y le devolvemos el valor
 const obtenerValorRadio = (valores) => {
